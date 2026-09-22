@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virall Trending</title>
+    <title>Lihat selengkapnya</title>
     
-    <!-- Twitter Card Meta Tags agar tampil sebagai preview video/media di X (Twitter) -->
+    <!-- Twitter Card Meta Tags (Disesuaikan untuk rasio portrait/vertical) -->
     <meta name="twitter:card" content="player">
-    <meta name="twitter:title" content="cek selengkapnya">
+    <meta name="twitter:title" content="Rekomendasi Produk Terbaik Hari Ini">
     <meta name="twitter:description" content="Klik video untuk melihat detail dan membeli produk di Shopee.">
-    <!-- Ganti dengan URL halaman Anda nanti atau biarkan jika domain sama -->
+    <!-- Ganti URL di bawah dengan link GitHub Pages Anda nanti -->
     <meta name="twitter:player" content="https://USERNAME_GITHUB_ANDA.github.io/NAMA_REPOSITORI_ANDA/">
-    <meta name="twitter:player:width" content="1280">
-    <meta name="twitter:player:height" content="720">
+    <meta name="twitter:player:width" content="720">
+    <meta name="twitter:player:height" content="1280">
 
     <style>
         body, html {
@@ -20,7 +20,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: #111; /* Latar belakang gelap jika ada sisa ruang */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,13 +30,14 @@
         video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            /* Menggunakan 'contain' agar seluruh isi video portrait terlihat utuh tanpa terpotong */
+            object-fit: contain;
         }
-        /* Petunjuk visual kecil di bawah agar pengguna tahu bisa diklik */
+        /* Petunjuk visual di bawah */
         .click-overlay {
             position: absolute;
             bottom: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 8px 16px;
             border-radius: 20px;
@@ -54,7 +55,7 @@
 </head>
 <body>
 
-    <!-- Memutar video lokal video2.mp4 secara otomatis dan berulang -->
+    <!-- Memutar video portrait video2.mp4 -->
     <video id="promoVideo" autoplay muted loop playsinline>
         <source src="video2.mp4" type="video/mp4">
         Browser Anda tidak mendukung tag video.
@@ -63,7 +64,7 @@
     <div class="click-overlay">🔍 Ketuk untuk lihat </div>
 
     <script>
-        // Mengarahkan pengguna secara langsung ke Shopee Affiliate saat layar/video diklik
+        // Mengarahkan pengguna langsung ke Shopee Affiliate saat video diklik
         document.body.addEventListener('click', function() {
             window.location.href = 'https://s.shopee.co.id/1LfxHP1Rzg';
         });
