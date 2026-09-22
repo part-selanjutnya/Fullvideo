@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virall Trending</title>
+    
+    <!-- Twitter Card Meta Tags agar tampil sebagai preview video/media di X (Twitter) -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="cek selengkapnya">
+    <meta name="twitter:description" content="Klik video untuk melihat detail dan membeli produk di Shopee.">
+    <!-- Ganti dengan URL halaman Anda nanti atau biarkan jika domain sama -->
+    <meta name="twitter:player" content="https://USERNAME_GITHUB_ANDA.github.io/NAMA_REPOSITORI_ANDA/">
+    <meta name="twitter:player:width" content="1280">
+    <meta name="twitter:player:height" content="720">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Petunjuk visual kecil di bawah agar pengguna tahu bisa diklik */
+        .click-overlay {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: sans-serif;
+            font-size: 14px;
+            pointer-events: none;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Memutar video lokal video2.mp4 secara otomatis dan berulang -->
+    <video id="promoVideo" autoplay muted loop playsinline>
+        <source src="video2.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+
+    <div class="click-overlay">🔍 Ketuk untuk lihat </div>
+
+    <script>
+        // Mengarahkan pengguna secara langsung ke Shopee Affiliate saat layar/video diklik
+        document.body.addEventListener('click', function() {
+            window.location.href = 'https://s.shopee.co.id/1LfxHP1Rzg';
+        });
+    </script>
+
+</body>
+</html>
